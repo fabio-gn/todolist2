@@ -1,0 +1,30 @@
+<div *ngIf="isActive; else inattive" id="posts-container">
+  <div id="forBlock" *ngFor="let post of posts; index as i ">
+  <div *ngIf="posts[i].active === true"  class="d-flex align-items-center gap-3 border rounded p-2 w-75 mb-3 ">
+
+    <img [src]="activeImages[1]"  alt="ddd">
+    <div class="card-body">
+    <h5 class="card-title">{{posts[i].title}}</h5>
+    <p class="card-text">{{posts[i].body}}</p>
+
+    </div>
+</div>
+</div>
+</div>
+<ng-template #inattive>
+  <div id="posts-container">
+  <div id="forBlock" *ngFor="let post of posts; index as i ">
+    <div *ngIf="posts[i].active === false"  class="d-flex align-items-center gap-3 border rounded p-2 w-75 mb-3 ">
+
+      <img [src]="activeImages[0]"  alt="ddd">
+      <div class="card-body">
+      <h5 class="card-title">{{posts[i].title}}</h5>
+      <p class="card-text">{{posts[i].body}}</p>
+
+      </div>
+  </div>
+  </div>
+</div>
+
+</ng-template>
+
